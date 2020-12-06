@@ -1,13 +1,16 @@
 from django.apps import AppConfig
 import pymongo
 from pymongo import MongoClient
+import os
+from dotenv import load_dotenv
 
 class AppConfig(AppConfig):
     name = 'app'
 
 
-
-cluster = MongoClient("mongodb+srv://edwu29:mongo123@opes.grfrk.mongodb.net/Test?retryWrites=true&w=majority")
+load_dotenv()
+test = os.environ.get("mongo")
+cluster = MongoClient(test)
 
 db = cluster["Test"]
 collection=db["test"]
