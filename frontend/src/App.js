@@ -72,7 +72,7 @@ function RecipeReviewCard() {
   };
 }
 
-function MyPopover() {
+function MyPopover(props) {
   const classes = useStyles();
   const [anchorEl, setAnchorEl] = React.useState(null);
 
@@ -106,23 +106,16 @@ function MyPopover() {
           horizontal: 'center',
         }}
       >
-        <CheckboxesGroup />
+        <CheckboxesGroup tags={props.tags} />
       </Popover>
     </div>
   );
 }
 
-function CheckboxesGroup() {
+function CheckboxesGroup(props) {
   const classes = useStyles();
-  const tags = [
-    'Computer Science', 'Web Development', 'Psychology', 'Biology',
-    'Physics', 'Chemistry', 'Math', 'Figma', 'Sociology', 'Philosophy',
-    'Criminology', 'Art', 'Art History', 'Engineering', 'Economics'
-  ]
-  let tagsState = tags.map((tag) => ({tagName: tag, checked: false}));
-  console.log(tagsState);
   const [state, setState] = React.useState({
-    tags: tagsState,
+    tags: props.tags
   });
 
   const handleChange = (event) => {
@@ -157,6 +150,17 @@ function CheckboxesGroup() {
 }
 
 function App() {
+  const tags = [
+    'Computer Science', 'Web Development', 'Psychology', 'Biology',
+    'Physics', 'Chemistry', 'Math', 'Figma', 'Sociology', 'Philosophy',
+    'Criminology', 'Art', 'Art History', 'Engineering', 'Economics'
+  ];
+  const tagsState = tags.map((tag) => ({tagName: tag, checked: false}));
+
+  const [state, setState] = React.useState({
+    tags: tagsState
+  });
+
   const classes = useStyles();
   const bull = <span className={classes.bullet}>•</span>;
   const [expanded, setExpanded] = React.useState(false);
@@ -213,7 +217,7 @@ function App() {
             <FilterListIcon fontSize = "large"/>
           </Grid>
           <Grid item>
-            <MyPopover />
+            <MyPopover tags={state.tags} />
           </Grid>
       </Grid>
     </div>
