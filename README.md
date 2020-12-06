@@ -16,6 +16,9 @@ If you want to interact with our Figma [mockup](https://www.figma.com/proto/1zYm
 ## Future Scope
 - Implementing Log In and Creating Account Functionality
 - Applying Filters to the Search
-- Saving previous tags to tailor recommendations
-
+- Saving previous tags to tailor recommendations.
+- Having a rating system for each post, to display the most popular posts.
+- Login using Google, Facebook, and more.
+- Integrated with discord to add resources to your account, and display on discord?
+- Have a "save collection" feature to refer back to. 
 ##### Thanks for reading!
