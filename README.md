@@ -1,5 +1,5 @@
 # Content Compiler
-_An educational web-page created by the poggies team! :)_ 
+_An educational web-page created by the poggies team for HackDuke 2020! :)_ 
 
 ## Description
 With little experience in web development, we did our best to create an educational tool that allows users to log in and create helpful posts based on specific topics. With links attached to each post, viewers of the web-page can easily use the filters to navigate and find relevant information.
