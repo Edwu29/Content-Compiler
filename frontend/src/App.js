@@ -80,8 +80,8 @@ function MyPopover() {
 
   return (
     <div>
-      <Button aria-describedby={id} variant="contained" color="primary" onClick={handleClick}>
-        Open Popover
+      <Button aria-describedby={id} variant="outlined" onClick={handleClick}>
+        Filters
       </Button>
       <Popover
         id={id}
