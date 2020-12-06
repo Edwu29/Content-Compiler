@@ -161,22 +161,6 @@ function App() {
           </Grid>
           <Grid item>
             <MyPopover />
-            {/*
-              <Button aria-describedby={id} onClick={handleClick}>
-                Filters
-              </Button>
-              <Popover
-                anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'center',
-              }}
-              transformOrigin={{
-                vertical: 'top',
-                horizontal: 'center',
-              }}
-              >
-              </Popover>
-              */}
           </Grid>
       </Grid>
     </div>
