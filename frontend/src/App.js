@@ -3,6 +3,9 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import clsx from 'clsx';
+import Button from '@material-ui/core/Button';
+import Menu from '@material-ui/core/Menu';
+import MenuItem from '@material-ui/core/MenuItem';
 import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardMedia from '@material-ui/core/CardMedia';
@@ -11,12 +14,22 @@ import CardActions from '@material-ui/core/CardActions';
 import Collapse from '@material-ui/core/Collapse';
 import Avatar from '@material-ui/core/Avatar';
 import IconButton from '@material-ui/core/IconButton';
+import Input from '@material-ui/core/Input';
+import InputLabel from '@material-ui/core/InputLabel';
+import InputAdornment from '@material-ui/core/InputAdornment';
 import Typography from '@material-ui/core/Typography';
 import { red } from '@material-ui/core/colors';
 import FavoriteIcon from '@material-ui/icons/Favorite';
+import Grid from '@material-ui/core/Grid';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
+import AddCircleOutlineIcon from '@material-ui/icons/AddCircleOutline';
+import TextField from '@material-ui/core/TextField';
+import SearchIcon from '@material-ui/icons/Search';
+import FilterListIcon from '@material-ui/icons/FilterList';
+import SvgIcon from '@material-ui/core/SvgIcon';
+import Popover from '@material-ui/core/Popover';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -61,22 +74,85 @@ function App() {
 
   return (
     <body>
-    <div>
-      <h1 style={{textAlign: "center", fontFamily: "Playfair Display SC", fontWeight: "normal", 
-      fontStyle: "normal", fontSize: "48px", lineHeight: "64px", textTransform: "uppercase",
-      margin:"15px"}}>Content Compiler</h1>
-
+    <div style={{display: "flex"}}>
       <button style = {{filter: "drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.31))", borderRadius: "40px",
       color : "black", fontFamily: "Playfair Display", backgroundColor: "#F1F8FF", outline: "none", border: "none",
       cursor: "pointer", float: "left", height: "43px", width: "150px", margin: "30px", fontSize: "18px"}}>Add Post</button>
 
-      <button style = {{filter: "drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.31))",
-      borderRadius: "40px", color : "black", fontFamily: "Playfair Display", backgroundColor: "#C1DAFF", outline: "none", border: "none",
-      cursor: "pointer", float: "right", height: "43px", width: "141px", margin: "30px", fontSize: "18px" }}>Create Account</button>
+      <div style={{margin: "auto"}}>
+        <h1 style={{textAlign: "center", fontFamily: "Playfair Display SC", fontWeight: "normal", 
+        fontStyle: "normal", fontSize: "48px", lineHeight: "64px", textTransform: "uppercase",
+        margin:"15px"}}>Content Compiler</h1>
+      </div>
 
-      <button style = {{filter: "drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.31))",
-      borderRadius: "40px", color : "black", fontFamily: "Playfair Display", backgroundColor: "white", outline: "none", border: "none",
-      cursor: "pointer", float: "right", height: "43px", width: "97px", margin: "30px", fontSize: "18px"}}>Log In</button>
+      <div>
+
+        <button style = {{filter: "drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.31))",
+        borderRadius: "40px", color : "black", fontFamily: "Playfair Display", backgroundColor: "#C1DAFF", outline: "none", border: "none",
+        cursor: "pointer", float: "right", height: "43px", width: "141px", margin: "30px 10px", fontSize: "18px" }}>Create Account</button>
+
+        <button style = {{filter: "drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.31))",
+        borderRadius: "40px", color : "black", fontFamily: "Playfair Display", backgroundColor: "white", outline: "none", border: "none",
+        cursor: "pointer", float: "right", height: "43px", width: "97px", margin: "30px 10px", fontSize: "18px"}}>Log In</button>
+      </div>
+    </div>
+
+    <div>
+      <Grid 
+        container spacing={1} 
+        direction = "row"
+        justify = "flex-end"
+        alignItems="flex-end" 
+        >
+          <Grid Item>
+            <SearchIcon fontSize ="large"/>
+          </Grid>
+          <Grid item>
+            <TextField 
+              id="input-with-icon-grid" 
+              placeholder = "Search:" 
+              variant = "outlined"
+              // style = {{backgroundColor : "#ECE9F5"}}
+              size = "small"
+              />
+          </Grid>
+          <Grid item>
+            <FilterListIcon fontSize = "large"/>
+          </Grid>
+          <Grid item>
+            <Button>
+              Filters
+            </Button>
+            <Popover
+              anchorOrigin={{
+              vertical: 'bottom',
+              horizontal: 'center',
+            }}
+            transformOrigin={{
+              vertical: 'top',
+              horizontal: 'center',
+            }}
+            >
+            </Popover>
+          </Grid>
+      </Grid>
+    </div>
+
+    <div>
+      <div>
+        <SvgIcon fontSize = "large">
+          <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12.5 20.9792L10.9375 22.3333C4.06251 16.1875 0.520844 12.9583 0.520844 9C0.520844 7.75 0.93751 6.60417 1.56251 5.66667V6.29167C1.56251 11.1875 5.62501 14.8333 12.5 20.9792ZM14.1667 16.7083C19.0625 12.2292 22.3958 9.3125 22.5 6.29167C22.5 4.20833 20.9375 2.64583 18.8542 2.64583C17.1875 2.64583 15.625 3.6875 15.1042 5.14583H13.125C12.5 3.6875 10.9375 2.64583 9.37501 2.64583C7.29168 2.64583 5.72918 4.20833 5.72918 6.29167C5.72918 9.3125 8.95834 12.2292 13.9583 16.7083L14.0625 16.8125L14.1667 16.7083ZM18.75 0.5625C21.9792 0.5625 24.4792 3.0625 24.4792 6.29167C24.4792 10.1458 20.9375 13.375 14.0625 19.625C7.18751 13.4792 3.64584 10.25 3.64584 6.29167C3.64584 3.0625 6.14584 0.5625 9.37501 0.5625C11.1458 0.5625 12.9167 1.39583 14.0625 2.75C15.2083 1.39583 16.9792 0.5625 18.75 0.5625Z" fill="black"/>
+          </svg>
+        </SvgIcon>
+      </div>
+      <div>
+        <h1 
+          fontFamily = "Playfair Display"
+          style ={{textDecoration : "underline"}}>
+          Most Popular
+        </h1>
+      </div>
     </div>
 
     <div>
