@@ -134,7 +134,6 @@ function CheckboxesGroup() {
       }
     }
     setState({tags: tempTagsState});
-    // setState({ ...state, [event.target.name]: event.target.checked });
   };
 
   let formControlLabels = state.tags.map((tag) =>
