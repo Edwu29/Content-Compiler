@@ -106,7 +106,7 @@ function MyPopover() {
           horizontal: 'center',
         }}
       >
-        <Typography className={classes.typography}>The content of the Popover.</Typography>
+        <CheckboxesGroup />
       </Popover>
     </div>
   );
