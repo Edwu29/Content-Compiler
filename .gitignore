@@ -2,4 +2,3 @@ frontend/node_modules
 .eslintcache
 .vscode
 .env
-backend/backend/.env
