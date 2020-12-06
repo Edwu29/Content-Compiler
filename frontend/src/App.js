@@ -114,35 +114,43 @@ function MyPopover() {
 
 function CheckboxesGroup() {
   const classes = useStyles();
+  const tags = [
+    'Computer Science', 'Web Development', 'Psychology', 'Biology',
+    'Physics', 'Chemistry', 'Math', 'Figma', 'Sociology', 'Philosophy',
+    'Criminology', 'Art', 'Art History', 'Engineering', 'Economics'
+  ]
+  let tagsState = tags.map((tag) => ({tagName: tag, checked: false}));
+  console.log(tagsState);
   const [state, setState] = React.useState({
-    gilad: true,
-    jason: false,
-    antoine: false,
+    tags: tagsState,
   });
 
   const handleChange = (event) => {
-    setState({ ...state, [event.target.name]: event.target.checked });
+    console.log('Clicked');
+    let tempTagsState = state.tags;
+    for (var i = 0; i < tempTagsState.length; i++) {
+      if (tempTagsState[i].tagName == event.target.name) {
+        tempTagsState[i].checked = event.target.checked;
+      }
+    }
+    setState({tags: tempTagsState});
+    // setState({ ...state, [event.target.name]: event.target.checked });
   };
 
-  const { gilad, jason, antoine } = state;
+  let formControlLabels = state.tags.map((tag) =>
+    <FormControlLabel
+      control={<Checkbox checked={tag.checked} onChange={handleChange} name={tag.tagName} />}
+      label={tag.tagName}
+    />
+  );
+
 
   return (
     <div className={classes.root}>
       <FormControl component="fieldset" className={classes.formControl}>
         <FormLabel component="legend">Assign responsibility</FormLabel>
         <FormGroup>
-          <FormControlLabel
-            control={<Checkbox checked={gilad} onChange={handleChange} name="gilad" />}
-            label="Gilad Gray"
-          />
-          <FormControlLabel
-            control={<Checkbox checked={jason} onChange={handleChange} name="jason" />}
-            label="Jason Killian"
-          />
-          <FormControlLabel
-            control={<Checkbox checked={antoine} onChange={handleChange} name="antoine" />}
-            label="Antoine Llorca"
-          />
+          {formControlLabels}
         </FormGroup>
       </FormControl>
     </div>
