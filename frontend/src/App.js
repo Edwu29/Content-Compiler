@@ -80,7 +80,7 @@ function App() {
       cursor: "pointer", float: "left", height: "43px", width: "150px", margin: "30px", fontSize: "18px"}}>Add Post</button>
 
       <div style={{margin: "auto"}}>
-        <h1 style={{textAlign: "center", fontFamily: "Playfair Display SC", fontWeight: "normal", 
+        <h1 style={{textAlign: "center", fontFamily: "Playfair Display SC", fontWeight: "normal",
         fontStyle: "normal", fontSize: "48px", lineHeight: "64px", textTransform: "uppercase",
         margin:"15px"}}>Content Compiler</h1>
       </div>
@@ -98,19 +98,19 @@ function App() {
     </div>
 
     <div>
-      <Grid 
-        container spacing={1} 
+      <Grid
+        container spacing={1}
         direction = "row"
         justify = "flex-end"
-        alignItems="flex-end" 
+        alignItems="flex-end"
         >
           <Grid Item>
             <SearchIcon fontSize ="large"/>
           </Grid>
           <Grid item>
-            <TextField 
-              id="input-with-icon-grid" 
-              placeholder = "Search:" 
+            <TextField
+              id="input-with-icon-grid"
+              placeholder = "Search:"
               variant = "outlined"
               // style = {{backgroundColor : "#ECE9F5"}}
               size = "small"
@@ -138,7 +138,7 @@ function App() {
       </Grid>
     </div>
 
-    <div>
+    <div className="App-mostPopular">
       <div>
         <SvgIcon fontSize = "large">
           <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -147,7 +147,7 @@ function App() {
         </SvgIcon>
       </div>
       <div>
-        <h1 
+        <h1
           fontFamily = "Playfair Display"
           style ={{textDecoration : "underline"}}>
           Most Popular
@@ -227,7 +227,7 @@ function App() {
           </Typography>
         </CardContent>
       </Collapse>
-    </Card>  
+    </Card>
     </div>
     </body>
   );

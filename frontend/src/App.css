@@ -1,3 +1,8 @@
 .App {
   text-align: center;
 }
+
+.App-mostPopular {
+  display: flex;
+  align-items: center;
+}
