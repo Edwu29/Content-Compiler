@@ -62,11 +62,29 @@ function App() {
   return (
     <body>
     <div>
+      <h1 style={{textAlign: "center", fontFamily: "Playfair Display SC", fontWeight: "normal", 
+      fontStyle: "normal", fontSize: "48px", lineHeight: "64px", textTransform: "uppercase",
+      margin:"15px"}}>Content Compiler</h1>
+
+      <button style = {{filter: "drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.31))", borderRadius: "40px",
+      color : "black", fontFamily: "Playfair Display", backgroundColor: "#F1F8FF", outline: "none", border: "none",
+      cursor: "pointer", float: "left", height: "43px", width: "150px", margin: "30px", fontSize: "18px"}}>Add Post</button>
+
+      <button style = {{filter: "drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.31))",
+      borderRadius: "40px", color : "black", fontFamily: "Playfair Display", backgroundColor: "#C1DAFF", outline: "none", border: "none",
+      cursor: "pointer", float: "right", height: "43px", width: "141px", margin: "30px", fontSize: "18px" }}>Create Account</button>
+
+      <button style = {{filter: "drop-shadow(4px 4px 4px rgba(0, 0, 0, 0.31))",
+      borderRadius: "40px", color : "black", fontFamily: "Playfair Display", backgroundColor: "white", outline: "none", border: "none",
+      cursor: "pointer", float: "right", height: "43px", width: "97px", margin: "30px", fontSize: "18px"}}>Log In</button>
+    </div>
+
+    <div>
     <Card className={classes.root}>
       <CardHeader
         avatar={
           <Avatar aria-label="recipe" className={classes.avatar}>
-            R
+            POG
           </Avatar>
         }
         action={
