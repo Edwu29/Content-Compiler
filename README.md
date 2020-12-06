@@ -1,4 +1,4 @@
-# Blog-Generator
+# Content Compiler
 _An educational web-page created by the poggies team! :)_ 
 
 ## Description
